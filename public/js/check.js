@@ -30,7 +30,7 @@ async function formhandle(){
         return;
     }
 
-    axios.post("/document_add", {
+    await axios.post("/document_add", {
         session: session,
         title: title,
         desc: desc,
@@ -40,4 +40,6 @@ async function formhandle(){
     document.querySelector("#title").value = "";
     document.querySelector("#desc").value = "";
     document.querySelector("#image").value = "";
+    window.location.reload()
+
 }
