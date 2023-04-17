@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js" defer></script>
+    <script src="js/check.js" defer></script>
+    <script src="js/docs.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="w-full p-2 bg-slate-300 border-black border-b-4 flex z-20 items-center justify-end gap-4 fixed">
+        <img src="img/logo.png" class="mr-auto" alt="United documentation logo">
+        <h2 class="text-xl">Logged in as <span class="font-bold" id="username"></span></h2>
+        <a class="rounded-full bg-emerald-400 p-2 hover:bg-emerald-500" href="index.html">Log out</a>
+    </header>
+    <main class="pt-20">
+        <div class="w-1/2 mx-auto text-center bg-slate-300 p-4 rounded-3xl mb-24">
+            <h1 class="font-semibold text-2xl mb-4">Create a new public note</h1>
+            <div class=" grid grid-cols-[1fr_2fr]">
+                <label for="title" class="p-1">Give it a title: </label>
+                <input class="p-1 mb-4" id="title" placeholder="Security Vulnerability in vsftpd 2.3.4 server">
+                <label for="desc" class="p-1">Add a more detailed description: </label>
+                <textarea class="p-1 mb-4" id="desc" cols="50" rows="4"  placeholder="There is a preety big backdoor, and we barely noticed it! Dropped on Metasploit today!"></textarea>
+                <label for="image" class="p-1">How about an image?: </label>
+                <textarea class="p-1 mb-4" id="image" cols="50" rows="2"  placeholder="https://picsum.photos/800/800"></textarea>
+                <button class="col-span-full bg-emerald-300 p-1 rounded-full" onclick="formhandle()">Submit!</button>
+            </div>
+        </div>
+        <div class="w-3/4 mx-auto text-center bg-slate-300 p-4 rounded-3xl">
+            <h1 class="text-xl font-semibold mb-4">Or check out what the community created</h1>
+            <div class="grid grid-cols-3" id="docs">
+                <!-- <article class="col-span-1">
+                    <h2 class="text-xl font-semibold">Security Vulnerability in vsftpd 2.3.4 server</h2>
+                    <h3 class="text-right font-thin mb-1 -mt-1">By: bartoszek</h3>
+                    <img src="https://picsum.photos/800/800" alt="user image" class="p-4 w-1/2 float-left"/>
+                    <p class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga fugit laudantium laboriosam est, dolor recusandae modi numquam accusamus nam suscipit minima unde dolorem nobis molestias reiciendis cumque, vitae voluptatibus aliquid?</p>
+                </article> -->
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
