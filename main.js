@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const bodyParser = require("body-parser");
 var MD5 = require("crypto-js/md5");
 const crypto = require("crypto");
@@ -146,7 +146,7 @@ app.post("/del_doc", async (req, res)=>{
     }
     let user = docs[0].user;
     console.log(user);
-    await db.collection("notes").deleteOne({_id:req.body.doc})
+    await db.collection("notes").deleteOne({_id:new ObjectId(req.body.doc)})
     res.status(201);
     res.send("Deleted!");
 });
