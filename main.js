@@ -122,6 +122,34 @@ app.post("/document_add", async (req, res)=>{
     res.status(201);
     res.send("Created!");
 });
+app.post("/del_doc", async (req, res)=>{
+    const cl = await client.connect();
+    const db = cl.db("obiekty_zadanie");
+    let session = req.body.session;
+    console.log(session);
+    if(typeof session == "undefined"){
+        res.status(400);
+        res.send("session field required");
+        return;
+    }
+    let query = {
+        id:session,
+        expires:{
+            $gte:Date.now()
+        }
+    };
+    let docs = await db.collection("sessions").find(query).toArray();
+    if(docs.length == 0){
+        res.status(403);
+        res.send("No active session");
+        return;
+    }
+    let user = docs[0].user;
+    console.log(user);
+    await db.collection("notes").deleteOne({_id:req.body.doc})
+    res.status(201);
+    res.send("Deleted!");
+});
 app.get("/docs", async (req, res)=>{
     const cl = await client.connect();
     const db = cl.db("obiekty_zadanie");

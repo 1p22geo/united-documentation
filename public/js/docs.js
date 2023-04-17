@@ -35,6 +35,14 @@ async function add_docs(){
             p.classList.add("text-left");
             p.textContent = doc.desc;
             article.appendChild(p);
+            let button = document.createElement("button");
+            button.classList.add("float-right", "rounded-full", "p-2", "bg-emerald-300");
+            button.textContent = "Report";
+            console.log(doc._id)
+            button.onclick = ()=>{
+                axios.post("/del_doc", {session: session, doc:doc._id})
+            }
+            article.appendChild(button);
             container.appendChild(article);
         });
 
