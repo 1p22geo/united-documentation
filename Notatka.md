@@ -4,8 +4,8 @@
 Moduły to osobne pliki js któr posiadają funkcje i eksportują je do głownego pliku js.
 
     ```
-export function name() {
-    kod
+    export function name() {
+        kod
     }
     ```
 
