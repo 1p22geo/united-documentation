@@ -7,7 +7,7 @@ polecam:
 npm install express (serwer)
 npm install mongodb (baza danych)
 npm install -D tailwindcss (style, css)
-npm init tailwindcss@config
+npx tailwindcss init
 ```
 ## 3.Napisać stronę główną w HTML i JS
 ```
