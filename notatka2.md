@@ -12,15 +12,15 @@ npx tailwindcss init
 ## 3.Napisać stronę główną w HTML i JS
 ```
 projekt
-node_modules
-    static
-        index.html
-        img
-            obrazek.jpg
-            obrazek2.jpg
-        js
-            login.js
-    package.json
+| - node_modules
+| - static
+|    | - index.html
+|    | - img
+|    |    | - obrazek.jpg
+|    |    | - obrazek2.jpg
+|    | - js
+|    |    | - login.js
+| - package.json
 ```
 ## 4.Dodać backend w express.js
 ```
